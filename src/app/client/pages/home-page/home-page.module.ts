@@ -6,6 +6,7 @@ import { HomePageComponent } from './home-page.component';
 import { CarouselModule } from '@app/client/components/carousel/carousel.module';
 import { ClientModule } from '@app/client/client.module';
 import { DishesModule } from '@app/admin-panel/pages/dishes/dishes.module';
+// import { FfpCarouselComponent } from 'ffp-carousel';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DishesModule } from '@app/admin-panel/pages/dishes/dishes.module';
     HomePageRoutingModule,
     CarouselModule,
     ClientModule,
-    DishesModule
+    DishesModule,
+    // FfpCarouselComponent
   ]
 })
 export class HomePageModule { }

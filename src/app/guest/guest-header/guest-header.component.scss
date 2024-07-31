@@ -1,11 +1,12 @@
-@import 'styles/mixins';
+//@import '../src/styles/mixins';
 
 .header {
   height: 60px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
-  @include gradient-background();
+  //TODO  @include gradient-background();
+  background-color: #FDFAF0;
   border-bottom: 2px solid #647350;
 
   &__title {

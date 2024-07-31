@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page.component';
 import { CarouselModule } from '@app/client/components/carousel/carousel.module';
 import { DishesModule } from '@app/admin-panel/pages/dishes/dishes.module';
-import { GuestHeaderModule } from '@app/core/features/guest-header/guest-header.module';
+import { GuestHeaderModule } from '@app/guest/guest-header/guest-header.module';
+// import { FfpCarouselComponent } from 'ffp-carousel';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { GuestHeaderModule } from '@app/core/features/guest-header/guest-header.
     CommonModule,
     CarouselModule,
     DishesModule,
-    GuestHeaderModule
+    GuestHeaderModule,
+    // FfpCarouselComponent
   ],
   exports: [
     HomePageComponent

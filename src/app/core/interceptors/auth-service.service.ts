@@ -15,17 +15,17 @@ export class AuthService {
   keycloak = inject(KeycloakService);
 
   constructor() {
-    if (this.keycloak.isLoggedIn()) {
-      this.keycloak.getKeycloakInstance().loadUserProfile();
-    }
+    // if (this.keycloak.isLoggedIn()) {
+    //   this.keycloak.getKeycloakInstance().loadUserProfile();
+    // }
   }
 
   public logout(): void {
-    this.keycloak.logout('http://localhost:4200/').then();
+    // this.keycloak.logout('http://localhost:4200/').then();
   }
 
   login() {
-    this.keycloak.login({redirectUri: 'http://localhost:4200/secured'}).then();
+    // this.keycloak.login({redirectUri: 'http://localhost:4200/secured'}).then();
   }
 
 

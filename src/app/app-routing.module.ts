@@ -1,19 +1,19 @@
 import { inject, NgModule } from '@angular/core';
 import { CanActivateFn, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@app/core/interceptors/auth.guard';
-import { HomePageComponent } from '@app/core/features/home-page/home-page.component';
+import { HomePageComponent } from '@app/guest/home-page/home-page.component';
 
-const isAuthenticated: CanActivateFn = (route, state) => {
-  return inject(AuthGuard).isAccessAllowed(route, state);
-}
+// const isAuthenticated: CanActivateFn = (route, state) => {
+//   return inject(AuthGuard).isAccessAllowed(route, state);
+// }
 
-const isAdmin: CanActivateFn = (route, state) => {
-  return inject(AuthGuard).isAdmin();
-}
-
-const isClient: CanActivateFn = (route, state) => {
-  return inject(AuthGuard).isClient();
-}
+// const isAdmin: CanActivateFn = (route, state) => {
+//   return inject(AuthGuard).isAdmin();
+// }
+//
+// const isClient: CanActivateFn = (route, state) => {
+//   return inject(AuthGuard).isClient();
+// }
 
 const routes: Routes = [
   {
@@ -21,12 +21,12 @@ const routes: Routes = [
     children: [
       {
         path: 'app',
-        canActivate: [isAuthenticated, isClient],
+        // canActivate: [isAuthenticated, isClient],
         loadChildren: () => import('@app/client/client.module').then(m => m.ClientModule)
       },
       {
         path: 'admin',
-        canActivate: [isAuthenticated, isAdmin],
+        // canActivate: [isAuthenticated, isAdmin],
         loadChildren: () => import('@app/admin-panel/admin-panel.module').then(m => m.AdminPanelModule)
       },
       {

@@ -20,7 +20,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { TempAuthInterceptor } from '@app/core/interceptors/app-auth.interceptor';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { AdminPanelModule } from '@app/admin-panel/admin-panel.module';
-import { HomePageModule } from '@app/core/features/home-page/home-page.module';
+import { HomePageModule } from '@app/guest/home-page/home-page.module';
 
 const APP_DATE_FORMATS: MatDateFormats = {
   parse: {
@@ -83,12 +83,12 @@ function initializeKeycloak(keycloak: KeycloakService) {
       useClass: TempAuthInterceptor,
       multi: true,
     },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeKeycloak,
-      multi: true,
-      deps: [KeycloakService]
-    }
+    // {
+    //   provide: APP_INITIALIZER,
+    //   useFactory: initializeKeycloak,
+    //   multi: true,
+    //   deps: [KeycloakService]
+    // }
   ],
   bootstrap: [AppComponent]
 })

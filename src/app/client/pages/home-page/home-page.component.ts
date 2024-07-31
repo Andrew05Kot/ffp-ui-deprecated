@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { DishService } from '@app/admin-panel/services/api/dish.service';
-import { SlideModel } from '@app/client/components/carousel/slide-model';
+// import { SlideModel } from '@app/client/components/carousel/slide-model';
 import { RecommendationService } from '@app/client/services/api/recommendation.service';
 import { Dish, RequestParams } from '@app/admin-panel/models/backend';
 import { RecommendationByUser } from '@app/client/models/backend/recommendation';
+import { SlideModel } from '@app/client/components/carousel/slide-model';
+// import { SlideModel } from 'ffp-carousel';
 
 @Component({
   selector: 'app-home-page',
@@ -41,19 +43,19 @@ export class HomePageComponent {
   }
 
   private initTop5DishesByRecommendations(): void {
-    this.recommendations.recommendedDishesIds.forEach(dishId => {
-      this.dishService.getById$(dishId).subscribe(item => {
-        this.slides.push({
-          title: item.name,
-          subtitle: item.category.name,
-          description: item.description,
-          imageUrl: item.imageUrl,
-          labels: item.labels,
-          oldPrice: item.price,
-          newPrice: item.price * 0.8
-        });
-      });
-    });
+    // this.recommendations.recommendedDishesIds.forEach(dishId => {
+    //   this.dishService.getById$(dishId).subscribe(item => {
+    //     this.slides.push({
+    //       title: item.name,
+    //       subtitle: item.category.name,
+    //       description: item.description,
+    //       imageUrl: item.imageUrl,
+    //       labels: item.labels,
+    //       // oldPrice: item.price,
+    //       // newPrice: item.price * 0.8
+    //     });
+    //   });
+    // });
   }
 
   private initTop5Dishes(): void {
